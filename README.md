@@ -1,7 +1,6 @@
-CS106B---Stanford
+Stanford-CS-106B-
 =================
 
-CS106B solutions
 
 This is the github repository where I have posted my solutions to the assignments of CS106B class.
 
