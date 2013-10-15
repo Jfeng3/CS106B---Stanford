@@ -1,16 +1,12 @@
 /*
  * File: Subsequences.cpp
  * ----------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
- * This file is the starter project for the Subsequences problem
- * on Assignment #3.
- * [TODO: extend the documentation]
+ * This is the solution for the subsequences problem. 
  */
 
 #include <iostream>
 #include <string>
-//#include "console.h"
+#include "console.h"
 #include "simpio.h"
 using namespace std;
 
@@ -18,7 +14,7 @@ using namespace std;
  * subsequence of the first string.
  */
 bool isSubsequence(string text, string subsequence);
-//bool isSubstring(string text, string subsequence);
+
 
 int main() {
     while(true) {
@@ -36,11 +32,16 @@ int main() {
     }
 }
         
-
+// Recursive function
 
 bool isSubsequence(string text, string subsequence){
-    if (subsequence.length() == 0) return true;   // base case
+    
+    // base case
+    
+    if (subsequence.length() == 0) return true;   
     int m = 0;
+    
+    // recursive case
         
     if ( (m = text.find(subsequence[0])) == string:: npos){
         return false;

@@ -118,7 +118,7 @@ string DoublyLinkedListPriorityQueue::dequeueMin() {
     return nameValue;
 }
 
-// This function deallocates all the used memory
+// Recursive funtion to deallocate all the memory used
 
 void DoublyLinkedListPriorityQueue:: Deallocate (Entry * & list){
     

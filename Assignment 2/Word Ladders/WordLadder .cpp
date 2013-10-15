@@ -1,15 +1,13 @@
 /*
- * File: WordLadder.cpp
- * ----------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
- * This file is the starter project for the Word Ladder problem.
- * [TODO: rewrite the documentation]
+ * This is the solution for the word ladder problem.
+ 
+   Word ladder allows us to get from starting word to the ending word by 
+    just changing one letter each time. 
  */
 
 #include <iostream>
 #include <string>
-//#include "console.h"
+#include "console.h"
 #include "simpio.h"
 #include "lexicon.h"
 #include "queue.h"
@@ -134,7 +132,7 @@ Vector <string> findNextWord(string word, Set<string>& fullWordList){
 
             
         
- // This function prints out the ladded after it has been found
+ // This function prints out the ladder after it has been found
     string printVector(Vector <string>& lastList, string lastWord){
         string result = "";
         string print = "Ladder found:  ";
@@ -151,6 +149,7 @@ Vector <string> findNextWord(string word, Set<string>& fullWordList){
             }
         } return result;
     }
+
 
 bool wordContained (string word, Vector <string> words ){
     

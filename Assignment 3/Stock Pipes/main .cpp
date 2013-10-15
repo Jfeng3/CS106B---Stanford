@@ -1,21 +1,24 @@
 /*
  * File: main.cpp
  * --------------
- * This is an empty C++ source file.
+ * This is the solution for Assignment 3 problem 6. 
  */
 
 #include <iostream>
-//#include "console.h"
+#include "console.h"
 #include "vector.h"
 #include "simpio.h"
 
 using namespace std;
 
+// funstions used in the program
+
 int cutStock(Vector <int> & requests, int stocklength);
-//int calculatePipesNeeded(Vector <int> & requests,Vector <int> & results,
-//                         int stocklength, int count);
+
 
 bool TryStockLength(Vector<int>& values, int numStock, int currentIndex, Vector<int>& stockSizes, int stockLength);
+
+
 
 int main() {
     cout << "Enter a number:";
@@ -39,13 +42,20 @@ int main() {
     return 0;
 }
 
+
+// Recursive function
+
 bool TryStockLength(Vector<int>& values, int numStock, int currentIndex, Vector<int>& stockSizes, int stockLength) {
+    
+    int currentValue = values.get(currentIndex);
+    
+    // base case
     
     if (currentIndex == values.size())
         return true;
     
-    int currentValue = values.get(currentIndex);
-    
+    // recursive case
+
     for(int i=0;i<numStock;i++)
     {
         int currentStockSize = stockSizes.get(i);

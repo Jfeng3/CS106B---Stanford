@@ -1,7 +1,9 @@
 /*
  * File: main.cpp
  * --------------
- * This is an empty C++ source file.
+ * This program finds a perfect number from a given set of numbers. 
+    A number is a perfect number if it is equal to the sum of its proper
+    devisors.
  */
 
 #include <iostream>
@@ -27,6 +29,7 @@ int main() {
     }return 0;
 }
 
+// This function checks if a certain number is a perfect number
 bool isPerfect(int n){
 //    divisors.clear();
     int sum = 0;

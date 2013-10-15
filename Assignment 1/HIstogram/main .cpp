@@ -21,9 +21,10 @@ using namespace std;
 
 
 Vector <int> histogram;
+
 // functions used  in this program
 
-//Vector <int> createHistogram(ifsstream &in);
+
 void createHistogram(ifstream &inputFile,Vector<int>& localHist);
 void printHistogram(const Vector<int>& localHist);
 string numberToPrint(int num);
@@ -32,7 +33,6 @@ int main()
 
 {
     
-
     Vector <int> hist;
     ifstream inputFile;
     cout<< "Enter file name: ";
@@ -46,9 +46,7 @@ int main()
     return 0;
 }
 
-
-
-//Vector<int> createHistogram(ifsstream &in)
+// This function reads data from a file using the ifstream object
 
 void createHistogram(ifstream &inputFile, Vector<int>& localHist) {
     for (int i = 0; i < 10; i++){
@@ -120,6 +118,7 @@ void  printHistogram(const Vector<int>& localHist){
     
     }
 }
+
 string numberToPrint(int num){
     string stars = "";
     for (int i = 0; i < num; i++){

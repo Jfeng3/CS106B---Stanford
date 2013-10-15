@@ -1,11 +1,5 @@
 /*
- * File: InverseGenetics.cpp
- * --------------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
- * This file is the starter project for the Inverse Genetics problem
- * on Assignment #3.
- * [TODO: extend the documentation]
+ * This is the solution for th einverse Genetics problem 
  */
 
 #include <iostream>
@@ -25,6 +19,8 @@ using namespace std;
  * that code, lists all possible RNA strands that could generate
  * that protein
  */
+
+
 void listAllRNAStrandsFor(string protein, Map<char, Set<string> >& codons);
 void listAllPossibilities(string protein, Queue <Set<string> > database, Map<char, Set<string> >& codons);
 void printAcids(Queue<Set<string> >  database);
@@ -65,22 +61,25 @@ Map<char, Set<string> > loadCodonMap() {
     return result;
 }
 
+//Wrapper function for the recursive function findAllWords
+
 void listAllRNAStrandsFor(string protein, Map<char, Set<string> >& codons) {
     
       findAllWords( protein, codons, "");
    
 }
 
+// Recursive function
+
 void findAllWords(string protein,Map<char, Set<string> >& codons,string solution)
    
 {
-//    int count = 0;
+ 
+    // base function
+    
     if (protein == "")
     {   
         cout<<solution<< endl;
-//         count++;
-    
-        
         return;
     }
     

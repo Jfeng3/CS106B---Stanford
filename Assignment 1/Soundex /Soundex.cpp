@@ -1,11 +1,9 @@
 /*
- * File: Combinations.cpp
- * ----------------------
- * Name: [TODO: enter name here]
- * Section: [TODO: enter section leader here]
- * This file is the starter project for the Combinations problem.
- * [TODO: rewrite the documentation]
- This refers to problem 4 of Assignment 1
+ 
+ This is the solution for Assignment 1 Problem 4
+ 
+ This program is for the Soundex algorithm. 
+ A Soundex algorithm produces code for a surname based on the way it sounds, rather than how it is spelled. 
  */
 
 #include <iostream>
@@ -17,7 +15,7 @@
 #include "strlib.h"
 
 using namespace std;
-//V2
+
 
 /* Here are the codes for converting letters
  Number     Letter
@@ -49,6 +47,7 @@ int main(){
 return 0;
 }
 
+// This function conevrts a string based on the Soundex algorithm
 
 string convertToNumbers(string name){
     string result = "";

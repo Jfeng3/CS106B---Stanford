@@ -9,12 +9,15 @@
 #include "error.h"
 
 
+// Constructor
 
 VectorPriorityQueue::VectorPriorityQueue() {
 	arr = new string[20];
     numAllocated = 20;
     numUsed = 0;
 }
+
+// Destructor
 
 VectorPriorityQueue::~VectorPriorityQueue() {
 	delete[] arr;

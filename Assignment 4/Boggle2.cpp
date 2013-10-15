@@ -8,9 +8,7 @@
  * [TODO: extend the documentation]
  */
 
-/* Two problems in getChoice
- 1 - how to exit the game
-  */
+
  
 #include <iostream>
 #include "gboggle.h"
@@ -146,6 +144,10 @@ void giveInstructions() {
     getLine();
 }
 
+/* In this function, the user has to make 2 choices
+   1 - Whether ot play standard Boggle or big boggle
+   2 - Whether to force the board configuration or not
+ */
 void getChoices(){
     Grid <char> usedLetters;
     int boardSize;
@@ -228,10 +230,10 @@ void getChoices(){
             break;
          
         }
-//        if (lastChoice =="N" ||  lastChoice == "No" || lastChoice =="no" || lastChoice == "n")
-//            STOPGAME
+
     }
 }
+
 
 void printAnswers(Set <string>finalAnswer, const Set <string> wordsAlreadyEntered){
     
@@ -244,7 +246,7 @@ void printAnswers(Set <string>finalAnswer, const Set <string> wordsAlreadyEntere
 }
     
 
-// if the player wants to choose the letters on the 16 cubes, this function does that
+// If the player wants to choose the letters on the 16 cubes, this function does that
 
 Grid <char> setUpCustomWordConfigurationsRegularBoard(int boardSize){
     
@@ -287,7 +289,7 @@ Grid <char> setUpCustomWordConfigurationsRegularBoard(int boardSize){
     } return lettersUsedInGame;
 }
     
-// if the player chooses the big board and wants to choose the letters, this function does that
+// If the player chooses the big board and wants to choose the letters on the cubes, this function does that
 
 Grid <char> setUpCustomWordConfigurationsBigBoard(int boardSize){
     string wordUsed;
@@ -329,6 +331,7 @@ Grid <char> setUpCustomWordConfigurationsBigBoard(int boardSize){
     return lettersUsedInGame;
     
 }
+
 // This function is used to get a random letter given a string of six letters
 
 char getRandomLetter(string word){
@@ -338,13 +341,15 @@ char getRandomLetter(string word){
     return c;
 }
 
-// This function gives the 16 cubes 16 letters
+
+// This function assigns 16 letters to the 16 cubes
 
 Grid<char> shuffleRegularBoard (int boardSize){
     
 // I use the grid to store what is displayed in the 16 cubes. I pass the grid as a parameter
 // to the human and computer turns
     Grid <char> lettersUsedInGame(boardSize,boardSize);
+    
     // code for shuufling the cubes. First step is to create a vector from the const array
     Vector <string> possibleStrings;
     
@@ -379,7 +384,9 @@ Grid<char> shuffleRegularBoard (int boardSize){
   } return lettersUsedInGame;
 }
 
-// This function gives the 25 cubes 25 letters
+
+// This function assigns 25 letters to the 25 cubes
+
 Grid <char> shuffleBigBoard (int boardSize){
     
     // I use the grid to store what is displayed in the 25 cubes. I pass the grid as a parameter
@@ -421,7 +428,9 @@ Grid <char> shuffleBigBoard (int boardSize){
     
 }
     
+
 // This fuction is for the humans turn
+
 void humansTurn(const Grid <char> lettersUsed, int boardSize,  Set <string> & wordsAlreadyEntered) {
     string enteredWord;
     Lexicon wordList("EnglishWords.dat");
@@ -610,6 +619,7 @@ bool wordCanBeFormed(string word,int index, const Grid <char> lettersUsed, int b
             }
         }return rowsAndColumns;
     }
+
 
 // This function checks if the rows and columns of the previous letter is adjacent to row and column
 // of the next letter
@@ -1026,6 +1036,7 @@ Vector <Vector <int> > findNextPossibleLetters ( int rows, int cols, Lexicon lex
 
 
 // recursive function to find all possible letters given a letter and the possiblities of the next letter
+
 Vector <string> howManyWordsCanBeFormed ( string solution, Vector <Vector <int> > nextLetters, Lexicon lex, Grid <char> lettersUsed,  Vector <Vector <int> > & alreadyUsedRowsAndColumns, Vector <string>& listOfWords, int boardSize){
     
     //Base case
@@ -1069,7 +1080,8 @@ Vector <string> howManyWordsCanBeFormed ( string solution, Vector <Vector <int> 
     return listOfWords;
     
 }
-// This function checks id the vector already contains the given word
+
+// This function checks if the vector already contains the given word
     
 bool wordContained (string word, Vector <string> words ){
     
