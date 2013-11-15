@@ -145,7 +145,7 @@ void giveInstructions() {
 }
 
 /* In this function, the user has to make 2 choices
-   1 - Whether ot play standard Boggle or big boggle
+   1 - Whether to play standard Boggle or big boggle
    2 - Whether to force the board configuration or not
  */
 void getChoices(){
